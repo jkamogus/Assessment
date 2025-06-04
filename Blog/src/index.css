@@ -40,16 +40,10 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-nav{
-  background-color: #111111;
-}
 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
-  }
-  button {
-    background-color: #f9f9f9;
+    background-color: #f9fafb;
   }
 }

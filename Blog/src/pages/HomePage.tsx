@@ -59,11 +59,11 @@ export default function HomePage(){
     return(
         <>
         <div className="min-h-screen flex flex-col">
-            <nav className="sticky top-0 w-full text-white shadow-md z-50">
+            <nav className="sticky top-0 w-full text-white bg-indigo-600 shadow-md z-50 dark:bg-zinc-900">
                 <div className="w-full max-w-screen-xl mx-auto px-6 py-4 flex justify-between items-center">
                     <p className="font-bold text-2xl">Welcome, {user?.user_metadata?.username}</p>
                     <button onClick = { handleLogout } 
-                            className="p-2 rounded bg-gray-700 text-white hover:bg-gray-500 transition duration-300 ease-in-out"
+                            className="p-2 rounded bg-red-500 text-white hover:bg-red-400 transition duration-300 ease-in-out"
                     >
                         Log Out
                     </button>
@@ -72,7 +72,7 @@ export default function HomePage(){
 
             <div className="w-full flex flex-col items-center justify-center">
                 <Link to = '/create-post' className="w-full">
-                    <button  className="p-2 mt-5 rounded bg-gray-700 text-white hover:bg-gray-500 transition duration-300 ease-in-out">Create Blog</button>
+                    <button  className="p-2 mt-5 rounded bg-indigo-600 text-white hover:bg-indigo-500 transition duration-300 ease-in-out dark:bg-gray-700 dark:hover:bg-gray-600">Create Blog</button>
                 </Link>
             </div>
 
@@ -80,7 +80,7 @@ export default function HomePage(){
             {error && <p className="mt-4 text-red-500">{error}</p>}
 
             {!loadingPosts && !error && posts.length === 0 && (
-                <p className="mt-4">No blogs yet.</p>
+                <p className="mt-4 text-slate-800 dark:text-white">No blogs yet.</p>
             )}
 
             <div className="w-full flex flex-col justify-center items-center">
@@ -88,7 +88,7 @@ export default function HomePage(){
                 <div className="flex justify-between max-w-md w-full mt-6 px-4">
                     <button onClick = {handlePrevPage}
                             disabled = {page === 1 || loadingPosts}
-                            className = "px-4 py-2 bg-gray-700 text-white rounded disabled:opacity-50"
+                            className = "px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-500 transition duration-300 ease-in-out rounded disabled:opacity-50 dark:bg-gray-700 dark:hover:bg-gray-600"
                     >
                     {"<"}
                     </button>
@@ -97,7 +97,7 @@ export default function HomePage(){
 
                     <button onClick = {handleNextPage}
                             disabled = {!hasMore || loadingPosts}
-                            className = "px-4 py-2 bg-gray-700 text-white rounded disabled:opacity-50"
+                            className = "px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-500 transition duration-300 ease-in-out rounded disabled:opacity-50 dark:bg-gray-700 dark:hover:bg-gray-600"
                     >
                     {">"}
                     </button>
@@ -109,8 +109,8 @@ export default function HomePage(){
                             <li key={post.id} className="p-4 mt-2 border rounded shadow">
                                 <Link to = {`/update-post/${post.id}`} className="block">
                                     <h2 className="font-bold text-lg">{post.title}</h2>
-                                    <p className="text-white text-left mt-1">{post.content}</p>
-                                    <p className="text-sm text-white mt-2">
+                                    <p className="text-slate-800 text-left mt-1 dark:text-white">{post.content}</p>
+                                    <p className="text-sm text-slate-800 mt-2 dark:text-white">
                                         Created at: {new Date(post.created_at).toLocaleString()}
                                     </p>
                                 </Link>

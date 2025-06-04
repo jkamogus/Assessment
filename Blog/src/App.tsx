@@ -6,8 +6,13 @@ import HomePage from './pages/HomePage';
 import PrivateRoute from './components/PrivateRoute';
 import CreatePost from './pages/CreatePost';
 import UpdatePost from './pages/UpdatePost';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect (() => {
+    document.documentElement.classList.add('dark')
+  }, [])
+  
   return (
     <>
     <BrowserRouter>

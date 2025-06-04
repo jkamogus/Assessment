@@ -36,7 +36,7 @@ export default function LoginPage (){
             <div className="flex flex-col w-full h-full items-center lg:justify-center">
 
                 <div className="w-full px-4">
-                    <h1>Welcome to Blogs!</h1>
+                    <h1 className="text-slate-800 dark:text-white">Welcome to Blogs!</h1>
                 </div>
 
                     {/*Login Form*/}
@@ -55,7 +55,7 @@ export default function LoginPage (){
                             className="w-full p-2 mt-5 rounded border border-gray-300 text-black focus:border-blue-500 focus:ring-1 focus:ring-blue-500"/>
 
                         
-                        <button type="submit" disabled={loading} className="w-full p-2 mt-5 rounded bg-gray-700 text-white hover:bg-gray-500 transition duration-300 ease-in-out">
+                        <button type="submit" disabled={loading} className="w-full p-2 mt-5 rounded bg-indigo-600 text-white hover:bg-indigo-500 transition duration-300 ease-in-out dark:bg-gray-700 dark:hover:bg-gray-600">
                             {loading ? "Please wait..." : "Log In"}
                         </button>
                         {error && <p style={{color: "red"}}>{error}</p>}
@@ -65,7 +65,7 @@ export default function LoginPage (){
                         <div className="flex flex-col justify-center items-start w-full mt-5">
                             <a className="text-left text-black">New to Blogs?</a>
                             <Link to = '/Register' className="w-full">
-                                <button  className="w-full p-2 rounded bg-gray-700 text-white hover:bg-gray-500 transition duration-300 ease-in-out">Create an Account</button>
+                                <button  className="w-full p-2 rounded bg-indigo-600 text-white hover:bg-indigo-500 transition duration-300 ease-in-out dark:bg-gray-700 dark:hover:bg-gray-600">Create an Account</button>
                             </Link>
                         </div>
                     </form>

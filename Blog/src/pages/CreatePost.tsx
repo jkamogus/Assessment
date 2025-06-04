@@ -19,8 +19,8 @@ export default function CreatePost(){
             await dispatch(createPost({ title: title.trim(), content})).unwrap();
             navigate("/home");
         } catch (err: any) {
-        console.error(err); // For debugging
-        alert("Failed to create post: " + (typeof err === "string" ? err : err?.message || "Unknown error"));
+            console.error(err); // For debugging
+            alert("Failed to create post: " + (typeof err === "string" ? err : err?.message || "Unknown error"));
         }
 
     };
@@ -31,7 +31,7 @@ export default function CreatePost(){
             <div className="flex flex-col w-full h-full items-center lg:justify-center">
         
                 <div className="w-full px-4">
-                    <h1>Create new Blog:</h1>
+                    <h1 className="text-slate-800">Create new Blog:</h1>
                 </div>
         
                 {/*Create Blog Form*/}
@@ -50,7 +50,7 @@ export default function CreatePost(){
                         className="required w-full p-2 mt-5 rounded border border-gray-300 text-black focus:border-blue-500 focus:ring-1 focus:ring-blue-500"/>
         
                                 
-                    <button type="submit" disabled={creating} className="w-full p-2 mt-5 rounded bg-gray-700 text-white hover:bg-gray-500 transition duration-300 ease-in-out">
+                    <button type="submit" disabled={creating} className="w-full p-2 mt-5 rounded bg-indigo-600 text-white hover:bg-indigo-500 transition duration-300 ease-in-out dark:bg-gray-700 dark:hover:bg-gray-600">
                         {creating ? "Posting content..." : "Post Blog"}
                     </button>
                 </form>
