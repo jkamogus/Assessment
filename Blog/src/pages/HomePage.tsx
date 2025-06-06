@@ -26,7 +26,7 @@ export default function HomePage(){
     }, []);
     
     useEffect(() => {
-        if(user){
+        if(user){ //checks first the user logged in, then retrieves posts matching that data
             dispatch(fetchPosts({ page, pageSize, userId: user.id}));
         }
     }, [dispatch, page, pageSize, user]);
